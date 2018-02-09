@@ -1,8 +1,14 @@
 import React, { Component } from 'react'
 import Modal from 'react-modal';
-
+import axios from 'axios'
 class AddOption extends Component{
 
+componentDidMount(){
+  console.log(
+    'bitch plz'
+  );
+  axios.get('/api/test').then(res => console.log('res', res))
+}
   render(){
     return(
       <Modal

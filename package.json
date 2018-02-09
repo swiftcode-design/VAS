@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "\"# VAS\"",
   "main": "index.js",
+  "proxy": "http://localhost:3000/",
   "scripts": {
     "start": "node server/server.js",
     "heroku-postbuild": "npm run build:prod",
@@ -22,6 +23,7 @@
   },
   "homepage": "https://github.com/swiftcode-design/VAS#readme",
   "dependencies": {
+    "axios": "^0.17.1",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
