@@ -15,7 +15,7 @@ class AutoApp extends Component {
   render() {
     return (
       <div>
-        <p onClick={this.test}>Plz sons</p>
+        <p onClick={this.test}>Plz kid</p>
         <AddOption test={this.test} open={this.state.test}/>
       </div>
     )
