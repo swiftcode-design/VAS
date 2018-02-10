@@ -2,7 +2,6 @@ import React, { Component} from 'react'
 import AppBar from 'material-ui/AppBar'
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
-import ImageGallery from 'react-image-gallery';
 import axios from 'axios'
 
 
@@ -13,16 +12,6 @@ class Home extends Component {
       cars: []
     }
   }
-  //  componentDidMount = async () =>{
-  //
-  //   try {
-  //     const cars = await axios.get('/api/cars')
-  //     console.log('test', cars.data.length);
-  //     this.setState({cars: cars.data.length ? cars.data : []})
-  //   } catch(err) {
-  //
-  //   }
-  // }
   componentDidMount(){
     axios.get('/api/cars').then(cars => {
       this.setState({cars: cars.data.length ? cars.data : []})
