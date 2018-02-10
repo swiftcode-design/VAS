@@ -1,22 +1,24 @@
 import React, { Component} from 'react'
-import AddOption from './AddOption'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import Home from './Home'
+import Admin from './Admin'
+import AppBar from 'material-ui/AppBar'
 
 class AutoApp extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      test: false
-    }
-    this.test = this.test.bind(this)
-  }
-  test(){
-    this.setState({test: !this.state.test})
-  }
   render() {
+    console.log('this.state', this.state)
+
     return (
       <div>
-        <p onClick={this.test}>Plz kid</p>
-        <AddOption test={this.test} open={this.state.test}/>
+        <AppBar
+          showMenuIconButton={false}
+          title="Vigilant Auto Sales"  />
+          <BrowserRouter>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/admin" component={Admin} />
+            </Switch>
+          </BrowserRouter>
       </div>
     )
   }
