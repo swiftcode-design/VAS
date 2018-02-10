@@ -27,7 +27,7 @@ class Home extends Component {
 
   render() {
     console.log('this.state', this.state)
-
+    console.log('herokku plz');
     return (
       <div>
 
