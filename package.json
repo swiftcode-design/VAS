@@ -1,6 +1,9 @@
 {
   "name": "vas",
   "version": "1.0.0",
+  "engines": {
+    "node": "8.9.4"
+  },
   "description": "\"# VAS\"",
   "main": "index.js",
   "proxy": "http://localhost:3000/",
