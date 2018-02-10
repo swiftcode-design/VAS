@@ -13,27 +13,28 @@ class Home extends Component {
       cars: []
     }
   }
-   componentDidMount = async () =>{
-    console.log('test  clicked');
-
-    try {
-      const cars = await axios.get('/api/cars')
-      console.log('test', cars.data.length);
+  //  componentDidMount = async () =>{
+  //
+  //   try {
+  //     const cars = await axios.get('/api/cars')
+  //     console.log('test', cars.data.length);
+  //     this.setState({cars: cars.data.length ? cars.data : []})
+  //   } catch(err) {
+  //
+  //   }
+  // }
+  componentDidMount(){
+    axios.get('/api/cars').then(cars => {
       this.setState({cars: cars.data.length ? cars.data : []})
-    } catch(err) {
-
-    }
+    })
   }
 
   render() {
-    console.log('this.state', this.state)
-    console.log('herokku plz');
+
     return (
       <div>
-
           <div >
             {this.state.cars.map((car, idx) => {
-                console.log('car', car)
                 const { kb_price, make, model, miles, pics, selling_price, year, description } = car.row_to_json
                 const images = car.row_to_json.pics.map(pic => (
                   {original: pic.url, thumbnail: pic.url}
