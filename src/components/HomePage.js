@@ -22,27 +22,36 @@ class HomePage extends Component {
 
     return (
       <div>
-          <div >
+          <div className="home-page">
             {this.state.cars.map((car, idx) => {
                 const { kb_price, make, model, miles, pics, selling_price, year, description } = car.row_to_json
                 const images = car.row_to_json.pics.map(pic => (
                   {original: pic.url, thumbnail: pic.url}
                 ))
                 return (
-                  <Card key={idx}>
-                    <CardHeader title={`${make} ${model}`} subtitle={selling_price}/>
-                    <CardMedia overlay={<CardTitle title={`${make} ${model}`} subtitle={year || 'N/A'}/>}>
-                      <img src={images[0].original}/>
-                    </CardMedia>
-                    <CardTitle title={`${make} ${model}`} subtitle={`price: ${selling_price} miles: ${miles}`} />
-                    <CardText>
-                      {description}
-                    </CardText>
-                    <CardActions>
-                      <FlatButton label="action1" />
-                      <FlatButton label="action2" />
-                    </CardActions>
-                  </Card>
+                  <div className="card-container">
+                    <Card  key={idx}>
+                      <CardHeader title={`${make} ${model}`} subtitle={selling_price}/>
+                      <CardMedia overlay={<CardTitle title={`${make} ${model}`} subtitle={year || 'N/A'}/>}>
+                        <img src={images[0].original}/>
+                      </CardMedia>
+                      <CardTitle title={`${make} ${model}`} subtitle={`price: ${selling_price} miles: ${miles}`} />
+                      <CardText>
+                        {description}
+                      </CardText>
+                      <CardActions>
+                        <FlatButton
+                          backgroundColor="#00BCD4"
+                          hoverColor="#8AA62F"
+                          href="mailto:georgelopezayala@icloud.com?subject=car"
+                          label="email us"/>
+                        <FlatButton
+                          backgroundColor="#00BCD4"
+                          hoverColor="#8AA62F"
+                          label="call us" />
+                      </CardActions>
+                    </Card>
+                  </div>
                 )
               })}
           </div>

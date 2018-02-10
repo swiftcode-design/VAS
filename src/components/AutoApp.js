@@ -9,16 +9,19 @@ class AutoApp extends Component {
     console.log('this.state:', this.state)
 
     return (
-      <div>
+      <div >
         <AppBar
           showMenuIconButton={false}
+          style={{position: "fixed"}}
           title="Vigilant Auto Sales"  />
-          <BrowserRouter>
-            <Switch>
-              <Route path="/" component={HomePage} />
-              <Route path="/admin" component={Admin} />
-            </Switch>
-          </BrowserRouter>
+          <div style={{paddingTop: "65px"}}>
+            <BrowserRouter>
+              <Switch>
+                <Route path="/" component={HomePage} />
+                <Route path="/admin" component={Admin} />
+              </Switch>
+            </BrowserRouter>
+          </div>
       </div>
     )
   }
