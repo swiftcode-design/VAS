@@ -1,6 +1,6 @@
 import React, { Component} from 'react'
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
-import Home from './Home'
+import HomePage from './HomePage'
 import Admin from './Admin'
 import AppBar from 'material-ui/AppBar'
 
@@ -15,8 +15,8 @@ class AutoApp extends Component {
           title="Vigilant Auto Sales"  />
           <BrowserRouter>
             <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/" component={Admin} />
+              <Route path="/" component={HomePage} />
+              <Route path="/admin" component={Admin} />
             </Switch>
           </BrowserRouter>
       </div>
